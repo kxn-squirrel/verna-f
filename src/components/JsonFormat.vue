@@ -1,12 +1,9 @@
 <template>
-<div>
-    <p>JSON Format</p>
-</div>
 <main id="jsonFmain">
-    <div class="srcDivWrapper"><textarea id="jsonSrc" class="inputArea"></textarea></div>
+    <div class="srcDivWrapper"><textarea id="jsonSrc" class="inputArea" v-model="inputShow" @input="inputChg"></textarea></div>
     <div id="dragEle"></div>
     <div class="showDivWrapper">
-        <div id="jsonRes" class="outputArea"></div>
+        <p id="jsonRes" class="outputArea">{{ jsonResShow }}</p>
     </div>
 </main>
 </template>
@@ -14,7 +11,16 @@
 <script>
 export default {
     data() {
-
+        return {
+            inputShow: "",
+            jsonResShow: ""
+        }
+    },
+    methods: {
+        inputChg(event) {
+            var tmp = this.inputShow
+            this.jsonResShow = ""
+        }
     }
 }
 </script>
@@ -29,13 +35,13 @@ export default {
 }
 
 .srcDivWrapper {
-    background-color: lightcyan;
-    width: 49.5%;
+    background-color: black;
+    width: 49%;
     height: 96.5%;
     padding: 0%;
     position: relative;
     cursor: move;
-    Float: left;
+    float: left;
 }
 
 .inputArea {
@@ -43,13 +49,13 @@ export default {
     height: 96.5%;
     padding: 4%;
     border: 1px solid #eee;
-    float: inline-start;
+    float: left;
     resize: none;
 }
 
 #dragEle {
     background-color: red;
-    width: 10px;
+    width: 1px;
     height: 96.5%;
     position: relative;
     cursor: move;
@@ -58,12 +64,12 @@ export default {
 
 .showDivWrapper {
     background-color: lightcyan;
-    width: 49.5%;
+    width: 49%;
     height: 96.5%;
     padding: 0%;
     position: relative;
     cursor: move;
-    Float: left;
+    float: left;
 }
 
 .outputArea {
@@ -73,7 +79,7 @@ export default {
     padding: 4%;
     border: 1px solid #eee;
     position: relative;
-    float: inline-start;
+    float: left;
 }
 
 .inputPadding {
