@@ -1,9 +1,9 @@
 <template>
-    <div id="tabdiv">
-        <p class="tabclick" @click="tabChg('TimeFormat')">TimeFormat</p>
-        <p class="tabclick" @click="tabChg('JsonFormat')">JsonFormat</p>
-    </div>
-    <component :is="tabComponent"></component>
+<div id="tabdiv">
+    <p class="tabclick" @click="tabChg('TimeFormat')">TimeFormat</p>
+    <p class="tabclick" @click="tabChg('JsonFormat')">JsonFormat</p>
+</div>
+<component :is="tabComponent"></component>
 </template>
 
 <script>
@@ -14,7 +14,7 @@ import Bob from './Bob.vue'
 export default {
     data() {
         return {
-            tabComponent:TimeFormat
+            tabComponent: TimeFormat
         }
     },
     methods: {
@@ -36,8 +36,9 @@ export default {
     background-color: gray;
     width: 100%;
     height: 40px;
-    float:unset;
+    float: unset;
 }
+
 .tabclick {
     width: 10%;
     height: 10px;
